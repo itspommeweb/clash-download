@@ -6,257 +6,39 @@
 <title>Clash 官方下载</title>
 
 <style>
-:root {
-  /* --- 配色方案 --- */
-  --bg: #f3f4f6;
-  --card-bg: #ffffff;
-  --text-main: #111827;
-  --text-sub: #6b7280;
-  --border: #e5e7eb;
-  
-  /* 核心主色调 */
-  --primary: #111827; 
-  --primary-hover: #374151;
-  
-  /* 阴影与圆角 */
-  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  --radius: 16px;
-}
-
-body {
-  margin: 0;
-  background: var(--bg);
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  color: var(--text-main);
-  line-height: 1.5;
-  -webkit-font-smoothing: antialiased;
-}
-
-.container {
-  max-width: 640px;
-  margin: 0 auto;
-  padding: 60px 20px 80px;
-}
-
-/* 头部区域 */
-header {
-  text-align: center;
-  margin-bottom: 40px;
-}
-
-h1 {
-  font-size: 36px;
-  font-weight: 800;
-  margin: 0 0 12px;
-  letter-spacing: -0.025em;
-  background: linear-gradient(135deg, #111827 0%, #4b5563 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.subtitle {
-  color: var(--text-sub);
-  font-size: 16px;
-}
-
-/* 卡片通用样式 */
-.card {
-  background: var(--card-bg);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow-sm);
-  transition: all 0.3s ease;
-  overflow: hidden;
-}
-
-/* 推荐主卡片 */
-.hero-card {
-  padding: 32px;
-  text-align: center;
-  border: 1px solid var(--border);
-  box-shadow: var(--shadow-md);
-  margin-bottom: 40px;
-}
-
-.hero-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-}
-
-.hero-badge {
-  display: inline-block;
-  background: #e5e7eb;
-  color: var(--text-main);
-  font-size: 12px;
-  font-weight: 600;
-  padding: 4px 12px;
-  border-radius: 99px;
-  margin-bottom: 16px;
-}
-
-.hero-card h2 {
-  margin: 0 0 8px;
-  font-size: 24px;
-  color: var(--text-main);
-}
-
-.hero-card p {
-  margin: 0 0 24px;
-  color: var(--text-sub);
-  font-size: 15px;
-}
-
-/* 主按钮 */
-.btn-primary {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 12px 32px;
-  background: var(--primary);
-  color: #fff;
-  text-decoration: none;
-  border-radius: 99px;
-  font-weight: 500;
-  font-size: 15px;
-  transition: background 0.2s;
-  gap: 8px;
-}
-
-.btn-primary:hover {
-  background: var(--primary-hover);
-}
-
-/* 列表区域 */
-.section-title {
-  font-size: 14px;
-  font-weight: 600;
-  color: var(--text-sub);
-  margin: 0 0 16px 8px;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-
-.list {
-  display: flex;
-  flex-direction: column;
-}
-
-.item {
-  display: flex;
-  align-items: center;
-  padding: 20px 24px;
-  border-bottom: 1px solid var(--border);
-  transition: background 0.2s;
-  text-decoration: none;
-}
-
-.item:hover {
-  background-color: #f9fafb;
-}
-
-.item:last-child {
-  border-bottom: none;
-}
-
-/* 图标容器 */
-.item-icon {
-  width: 40px;
-  height: 40px;
-  background: #f3f4f6;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-right: 16px;
-  color: var(--text-main);
-  flex-shrink: 0;
-}
-
-.item-content {
-  flex: 1;
-}
-
-.item-title {
-  font-size: 15px;
-  font-weight: 500;
-  color: var(--text-main);
-  margin-bottom: 2px;
-}
-
-.item-sub {
-  font-size: 13px;
-  color: var(--text-sub);
-}
-
-/* 列表按钮 */
-.item-action {
-  font-size: 14px;
-  color: var(--primary);
-  font-weight: 500;
-  background: #e5e7eb;
-  padding: 6px 14px;
-  border-radius: 6px;
-  text-decoration: none;
-  transition: all 0.2s;
-}
-
-.item-action:hover {
-  background: var(--primary);
-  color: #fff;
-}
-
-/* SVG 图标样式 */
-svg {
-  width: 20px;
-  height: 20px;
-  fill: currentColor;
-}
-
-/* 底部说明区域 */
-.usage-box {
-  margin-top: 48px;
-  padding: 24px;
-  background: rgba(0,0,0,0.03);
-  border-radius: var(--radius);
-  color: var(--text-sub);
-  font-size: 14px;
-}
-
-.usage-title {
-  font-weight: 600;
-  color: var(--text-main);
-  margin-bottom: 12px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.usage-list {
-  margin: 0;
-  padding-left: 20px;
-  line-height: 1.8;
-}
-
-.usage-list li {
-  margin-bottom: 4px;
-}
-
-.footer-copyright {
-  margin-top: 32px;
-  text-align: center;
-  font-size: 13px;
-  color: #9ca3af;
-}
-
-/* 移动端适配 */
-@media (max-width: 480px) {
-  .hero-card { padding: 24px; }
-  .item { padding: 16px; }
-  .item-title { font-size: 14px; }
-  .item-sub { font-size: 12px; }
-  .usage-box { padding: 20px; }
-}
+/* --- 样式表 --- */
+:root { --bg: #f3f4f6; --card-bg: #ffffff; --text-main: #111827; --text-sub: #6b7280; --border: #e5e7eb; --primary: #111827; --primary-hover: #374151; --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05); --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); --radius: 16px; }
+body { margin: 0; background: var(--bg); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; color: var(--text-main); line-height: 1.5; -webkit-font-smoothing: antialiased; }
+.container { max-width: 640px; margin: 0 auto; padding: 60px 20px 80px; }
+header { text-align: center; margin-bottom: 40px; }
+h1 { font-size: 36px; font-weight: 800; margin: 0 0 12px; letter-spacing: -0.025em; background: linear-gradient(135deg, #111827 0%, #4b5563 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.subtitle { color: var(--text-sub); font-size: 16px; }
+.card { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow-sm); transition: all 0.3s ease; overflow: hidden; }
+.hero-card { padding: 32px; text-align: center; border: 1px solid var(--border); box-shadow: var(--shadow-md); margin-bottom: 40px; }
+.hero-card:hover { transform: translateY(-2px); box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); }
+.hero-badge { display: inline-block; background: #e5e7eb; color: var(--text-main); font-size: 12px; font-weight: 600; padding: 4px 12px; border-radius: 99px; margin-bottom: 16px; }
+.hero-card h2 { margin: 0 0 8px; font-size: 24px; color: var(--text-main); }
+.hero-card p { margin: 0 0 24px; color: var(--text-sub); font-size: 15px; }
+.btn-primary { display: inline-flex; align-items: center; justify-content: center; padding: 12px 32px; background: var(--primary); color: #fff; text-decoration: none; border-radius: 99px; font-weight: 500; font-size: 15px; transition: background 0.2s; gap: 8px; }
+.btn-primary:hover { background: var(--primary-hover); }
+.section-title { font-size: 14px; font-weight: 600; color: var(--text-sub); margin: 0 0 16px 8px; text-transform: uppercase; letter-spacing: 0.05em; }
+.list { display: flex; flex-direction: column; }
+.item { display: flex; align-items: center; padding: 20px 24px; border-bottom: 1px solid var(--border); transition: background 0.2s; text-decoration: none; }
+.item:hover { background-color: #f9fafb; }
+.item:last-child { border-bottom: none; }
+.item-icon { width: 40px; height: 40px; background: #f3f4f6; border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-right: 16px; color: var(--text-main); flex-shrink: 0; }
+.item-content { flex: 1; }
+.item-title { font-size: 15px; font-weight: 500; color: var(--text-main); margin-bottom: 2px; }
+.item-sub { font-size: 13px; color: var(--text-sub); }
+.item-action { font-size: 14px; color: var(--primary); font-weight: 500; background: #e5e7eb; padding: 6px 14px; border-radius: 6px; text-decoration: none; transition: all 0.2s; }
+.item-action:hover { background: var(--primary); color: #fff; }
+svg { width: 20px; height: 20px; fill: currentColor; }
+.usage-box { margin-top: 48px; padding: 24px; background: rgba(0,0,0,0.03); border-radius: var(--radius); color: var(--text-sub); font-size: 14px; }
+.usage-title { font-weight: 600; color: var(--text-main); margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+.usage-list { margin: 0; padding-left: 20px; line-height: 1.8; }
+.usage-list li { margin-bottom: 4px; }
+.footer-copyright { margin-top: 32px; text-align: center; font-size: 13px; color: #9ca3af; }
+@media (max-width: 480px) { .hero-card { padding: 24px; } .item { padding: 16px; } .item-title { font-size: 14px; } .item-sub { font-size: 12px; } .usage-box { padding: 20px; } }
 </style>
 </head>
 
@@ -272,7 +54,7 @@ svg {
     <div class="hero-badge">推荐使用</div>
     <h2>Clash Verge (Windows)</h2>
     <p>现代化 UI 设计，支持 Script 与规则集，适合绝大多数用户。</p>
-    <a class="btn-primary" href="./Clash.Verge_v2.4.4_Windows_x64.exe">
+    <a class="btn-primary" href="https://github.com/itspommeweb/clash-download/releases/download/v2.4.4/Clash.Verge_v2.4.4_Windows_x64.exe">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
       下载 Verge v2.4.4
     </a>
@@ -290,7 +72,7 @@ svg {
         <div class="item-title">Clash for Windows</div>
         <div class="item-sub">经典版 v2.4.4 · 停止维护</div>
       </div>
-      <a href="./Clash.for.Windows_v2.4.4.exe" class="item-action">下载</a>
+      <a href="https://github.com/itspommeweb/clash-download/releases/download/v2.4.4/Clash.for.Windows_v2.4.4.exe" class="item-action">下载</a>
     </div>
 
     <div class="item">
@@ -301,7 +83,7 @@ svg {
         <div class="item-title">Clash for Android</div>
         <div class="item-sub">移动端 v2.11.19</div>
       </div>
-      <a href="./Clash.for.Android_v2.11.19.apk" class="item-action">下载</a>
+      <a href="https://github.com/itspommeweb/clash-download/releases/download/v2.4.4/Clash.for.Android_v2.11.19.apk" class="item-action">下载</a>
     </div>
 
     <div class="item">
@@ -312,7 +94,7 @@ svg {
         <div class="item-title">Clash Verge (macOS Intel)</div>
         <div class="item-sub">Verge v2.4.4 · 适用于老款 Mac</div>
       </div>
-      <a href="./Clash.Verge_v2.4.4_macOS_x64.dmg" class="item-action">下载</a>
+      <a href="https://github.com/itspommeweb/clash-download/releases/download/v2.4.4/Clash.Verge_v2.4.4_macOS_x64.dmg" class="item-action">下载</a>
     </div>
 
     <div class="item">
@@ -323,7 +105,7 @@ svg {
         <div class="item-title">Clash Verge (macOS M1/M2)</div>
         <div class="item-sub">Verge v2.4.4 · 适用于 Apple Silicon</div>
       </div>
-      <a href="./Clash.Verge_v2.4.4_macOS_arm64.dmg" class="item-action">下载</a>
+      <a href="https://github.com/itspommeweb/clash-download/releases/download/v2.4.4/Clash.Verge_v2.4.4_macOS_arm64.dmg" class="item-action">下载</a>
     </div>
     
   </div>
