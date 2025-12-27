@@ -1,147 +1,350 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8" />
-  <title>Clash 下载</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Clash 官方下载</title>
 
-  <style>
-    body {
-      margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      background: #f6f7f9;
-      color: #111;
-    }
+<style>
+:root {
+  /* --- 配色方案 --- */
+  --bg: #f3f4f6;
+  --card-bg: #ffffff;
+  --text-main: #111827;
+  --text-sub: #6b7280;
+  --border: #e5e7eb;
+  
+  /* 核心主色调 */
+  --primary: #111827; 
+  --primary-hover: #374151;
+  
+  /* 阴影与圆角 */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --radius: 16px;
+}
 
-    .container {
-      max-width: 720px;
-      margin: 0 auto;
-      padding: 40px 20px 80px;
-    }
+body {
+  margin: 0;
+  background: var(--bg);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  color: var(--text-main);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
 
-    h1 {
-      font-size: 32px;
-      font-weight: 600;
-      margin-bottom: 8px;
-    }
+.container {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 60px 20px 80px;
+}
 
-    .subtitle {
-      color: #666;
-      margin-bottom: 32px;
-      font-size: 16px;
-    }
+/* 头部区域 */
+header {
+  text-align: center;
+  margin-bottom: 40px;
+}
 
-    .card {
-      background: #fff;
-      border-radius: 16px;
-      padding: 24px;
-      margin-bottom: 20px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.06);
-    }
+h1 {
+  font-size: 36px;
+  font-weight: 800;
+  margin: 0 0 12px;
+  letter-spacing: -0.025em;
+  background: linear-gradient(135deg, #111827 0%, #4b5563 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 
-    .card h2 {
-      margin: 0 0 6px;
-      font-size: 20px;
-    }
+.subtitle {
+  color: var(--text-sub);
+  font-size: 16px;
+}
 
-    .desc {
-      font-size: 14px;
-      color: #666;
-      margin-bottom: 16px;
-    }
+/* 卡片通用样式 */
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
 
-    .btn {
-      display: inline-block;
-      padding: 12px 22px;
-      background: #111;
-      color: #fff;
-      border-radius: 999px;
-      text-decoration: none;
-      font-size: 14px;
-    }
+/* 推荐主卡片 */
+.hero-card {
+  padding: 32px;
+  text-align: center;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-md);
+  margin-bottom: 40px;
+}
 
-    .btn:hover {
-      opacity: 0.85;
-    }
+.hero-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
 
-    .section-title {
-      margin: 48px 0 16px;
-      font-size: 20px;
-      font-weight: 600;
-    }
+.hero-badge {
+  display: inline-block;
+  background: #e5e7eb;
+  color: var(--text-main);
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 99px;
+  margin-bottom: 16px;
+}
 
-    ul {
-      padding-left: 18px;
-      color: #444;
-      font-size: 14px;
-      line-height: 1.8;
-    }
+.hero-card h2 {
+  margin: 0 0 8px;
+  font-size: 24px;
+  color: var(--text-main);
+}
 
-    .footer {
-      margin-top: 60px;
-      font-size: 13px;
-      color: #888;
-    }
-  </style>
+.hero-card p {
+  margin: 0 0 24px;
+  color: var(--text-sub);
+  font-size: 15px;
+}
+
+/* 主按钮 */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 32px;
+  background: var(--primary);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 99px;
+  font-weight: 500;
+  font-size: 15px;
+  transition: background 0.2s;
+  gap: 8px;
+}
+
+.btn-primary:hover {
+  background: var(--primary-hover);
+}
+
+/* 列表区域 */
+.section-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-sub);
+  margin: 0 0 16px 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  padding: 20px 24px;
+  border-bottom: 1px solid var(--border);
+  transition: background 0.2s;
+  text-decoration: none;
+}
+
+.item:hover {
+  background-color: #f9fafb;
+}
+
+.item:last-child {
+  border-bottom: none;
+}
+
+/* 图标容器 */
+.item-icon {
+  width: 40px;
+  height: 40px;
+  background: #f3f4f6;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 16px;
+  color: var(--text-main);
+  flex-shrink: 0;
+}
+
+.item-content {
+  flex: 1;
+}
+
+.item-title {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--text-main);
+  margin-bottom: 2px;
+}
+
+.item-sub {
+  font-size: 13px;
+  color: var(--text-sub);
+}
+
+/* 列表按钮 */
+.item-action {
+  font-size: 14px;
+  color: var(--primary);
+  font-weight: 500;
+  background: #e5e7eb;
+  padding: 6px 14px;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.item-action:hover {
+  background: var(--primary);
+  color: #fff;
+}
+
+/* SVG 图标样式 */
+svg {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+}
+
+/* 底部说明区域 */
+.usage-box {
+  margin-top: 48px;
+  padding: 24px;
+  background: rgba(0,0,0,0.03);
+  border-radius: var(--radius);
+  color: var(--text-sub);
+  font-size: 14px;
+}
+
+.usage-title {
+  font-weight: 600;
+  color: var(--text-main);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.usage-list {
+  margin: 0;
+  padding-left: 20px;
+  line-height: 1.8;
+}
+
+.usage-list li {
+  margin-bottom: 4px;
+}
+
+.footer-copyright {
+  margin-top: 32px;
+  text-align: center;
+  font-size: 13px;
+  color: #9ca3af;
+}
+
+/* 移动端适配 */
+@media (max-width: 480px) {
+  .hero-card { padding: 24px; }
+  .item { padding: 16px; }
+  .item-title { font-size: 14px; }
+  .item-sub { font-size: 12px; }
+  .usage-box { padding: 20px; }
+}
+</style>
 </head>
 
 <body>
-  <div class="container">
-    <h1>Clash</h1>
-    <div class="subtitle">官方原版下载 · GitHub Releases 分发</div>
+<div class="container">
 
-    <!-- Windows · Clash Verge -->
-    <div class="card">
-      <h2>Windows · Clash Verge（推荐）</h2>
-      <div class="desc">新版客户端 · 适用于 Windows 10 / 11 · 64 位</div>
-      <a class="btn"
-         href="https://github.com/itspommeweb/clash-download/releases/download/v2.4.4/Clash.Verge_v2.4.4_Windows_x64.exe">
-        下载 Clash Verge（Windows）
-      </a>
+  <header>
+    <h1>Clash Downloads</h1>
+    <div class="subtitle">官方原版分发 · 安全 · 极速</div>
+  </header>
+
+  <div class="card hero-card">
+    <div class="hero-badge">推荐使用</div>
+    <h2>Clash Verge (Windows)</h2>
+    <p>现代化 UI 设计，支持 Script 与规则集，适合绝大多数用户。</p>
+    <a class="btn-primary" href="./Clash.Verge_v2.4.4_Windows_x64.exe">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+      下载 Verge v2.4.4
+    </a>
+  </div>
+
+  <div class="section-title">其他平台版本</div>
+
+  <div class="card list">
+    
+    <div class="item">
+      <div class="item-icon">
+        <svg viewBox="0 0 24 24"><path d="M0 3.449L9.75 2.1v9.451H0m10.949-9.602L24 0v11.4H10.949M0 12.6h9.75v9.451L0 20.699M10.949 12.6H24V24l-12.9-1.801"/></svg>
+      </div>
+      <div class="item-content">
+        <div class="item-title">Clash for Windows</div>
+        <div class="item-sub">经典版 v2.4.4 · 停止维护</div>
+      </div>
+      <a href="./Clash.for.Windows_v2.4.4.exe" class="item-action">下载</a>
     </div>
 
-    <!-- Windows · Clash for Windows -->
-    <div class="card">
-      <h2>Windows · Clash for Windows（旧版）</h2>
-      <div class="desc">经典旧版本 · 已停止维护</div>
-      <a class="btn"
-         href="https://github.com/itspommeweb/clash-download/releases/download/v2.4.4/Clash.for.Windows_v2.4.4.exe">
-        下载 Clash for Windows
-      </a>
+    <div class="item">
+      <div class="item-icon">
+        <svg viewBox="0 0 24 24"><path d="M17.523 15.3414c-.5511 0-.9993-.4486-.9993-.9997s.4482-.9993.9993-.9993c.5511 0 .9993.4482.9993.9993.0001.5511-.4482.9997-.9993.9997m-11.046 0c-.5511 0-.9993-.4486-.9993-.9997s.4482-.9993.9993-.9993c.5511 0 .9993.4482.9993.9993 0 .5511-.4482.9997-.9993.9997m11.4045-6.02l1.9973-3.4592a.416.416 0 00-.152-.5676.416.416 0 00-.5676.152l-2.0223 3.503C15.5902 8.4213 13.8533 8.0904 12 8.0904s-3.5902.3309-5.1367.8592L4.841 5.4466a.4161.4161 0 00-.5677-.152.416.416 0 00-.152.5676l1.9973 3.4592C2.6889 11.1867.3432 14.6589 0 18.761h24c-.3432-4.1021-2.6889-7.5743-6.1185-9.4396"/></svg>
+      </div>
+      <div class="item-content">
+        <div class="item-title">Clash for Android</div>
+        <div class="item-sub">移动端 v2.11.19</div>
+      </div>
+      <a href="./Clash.for.Android_v2.11.19.apk" class="item-action">下载</a>
     </div>
 
-    <!-- macOS · Intel -->
-    <div class="card">
-      <h2>macOS · Intel 芯片</h2>
-      <div class="desc">适用于 Intel 架构的 Mac 设备</div>
-      <a class="btn"
-         href="https://github.com/itspommeweb/clash-download/releases/download/v2.4.4/Clash.Verge_v2.4.4_macOS_x64.dmg">
-        下载 macOS（Intel）
-      </a>
+    <div class="item">
+      <div class="item-icon">
+        <svg viewBox="0 0 24 24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.68-.83 1.14-1.99 1.01-3.15-1.02.04-2.26.68-3 1.54-.64.74-1.2 1.95-1.05 3.08 1.14.09 2.3-.64 3.04-1.47"/></svg>
+      </div>
+      <div class="item-content">
+        <div class="item-title">Clash Verge (macOS Intel)</div>
+        <div class="item-sub">Verge v2.4.4 · 适用于老款 Mac</div>
+      </div>
+      <a href="./Clash.Verge_v2.4.4_macOS_x64.dmg" class="item-action">下载</a>
     </div>
 
-    <!-- Android -->
-    <div class="card">
-      <h2>Android</h2>
-      <div class="desc">适用于 Android 设备（arm64）</div>
-      <a class="btn"
-         href="https://github.com/itspommeweb/clash-download/releases/download/v2.4.4/Clash.Meta_v2.10.2_Android_arm64.apk">
-        下载 Android 版本
-      </a>
+    <div class="item">
+      <div class="item-icon">
+        <svg viewBox="0 0 24 24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.68-.83 1.14-1.99 1.01-3.15-1.02.04-2.26.68-3 1.54-.64.74-1.2 1.95-1.05 3.08 1.14.09 2.3-.64 3.04-1.47"/></svg>
+      </div>
+      <div class="item-content">
+        <div class="item-title">Clash Verge (macOS M1/M2)</div>
+        <div class="item-sub">Verge v2.4.4 · 适用于 Apple Silicon</div>
+      </div>
+      <a href="./Clash.Verge_v2.4.4_macOS_arm64.dmg" class="item-action">下载</a>
     </div>
+    
+  </div>
 
-    <!-- 使用说明 -->
-    <div class="section-title">使用说明</div>
-    <ul>
+  <div class="usage-box">
+    <div class="usage-title">
+      <svg viewBox="0 0 24 24" style="width:18px;height:18px;"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+      使用说明
+    </div>
+    <ul class="usage-list">
       <li>本页面仅提供 Clash 官方原版安装文件下载。</li>
       <li>不包含任何配置文件、节点或订阅服务。</li>
       <li>安装完成后，请自行导入配置文件使用。</li>
       <li>请在遵守当地法律法规的前提下使用。</li>
     </ul>
-
-    <div class="footer">
-      © Clash · 文件来源：GitHub Releases
-    </div>
   </div>
+
+  <div class="footer-copyright">
+     @ Clash · 文件来源：GitHub Releases
+  </div>
+
+</div>
 </body>
 </html>
